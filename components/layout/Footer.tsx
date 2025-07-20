@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import { logoTop } from "@/constants";
@@ -6,19 +7,23 @@ import Image from "next/image";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-100 text-gray-700 mt-10 border-t">
-      <div className="mx-auto px-4 py-10 grid grid-cols-4 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
         {/* Column 1: Logo and Description */}
         <div>
-          <h3 className="text-xl font-bold text-indigo-600">
-            <Image src={logoTop} alt={""} />{" "}
-          </h3>
-          <p className="mt-2 text-sm">
+          <Link href="/">
+            <Image
+              src={logoTop}
+              alt="StayFinder Logo"
+              className="h-10 w-auto mb-3"
+            />
+          </Link>
+          <p className="text-sm leading-relaxed">
             Your gateway to comfortable, affordable, and unique accommodations
             worldwide.
           </p>
         </div>
 
-        {/* Column 2: Links */}
+        {/* Column 2: Quick Links */}
         <div>
           <h4 className="text-md font-semibold mb-3">Quick Links</h4>
           <ul className="space-y-2 text-sm">
@@ -58,7 +63,7 @@ const Footer: React.FC = () => {
           <h4 className="text-md font-semibold mb-3">Contact Us</h4>
           <p className="text-sm">Email: support@stayfinder.com</p>
           <p className="text-sm">Phone: +1 (800) 123-4567</p>
-          <p className="text-sm">Address: 123 Traveler Lane, Wander City</p>
+          <p className="text-sm">123 Traveler Lane, Wander City</p>
         </div>
       </div>
 

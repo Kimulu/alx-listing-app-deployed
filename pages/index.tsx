@@ -10,16 +10,16 @@ const HomePage: React.FC = () => {
     <>
       {/* Hero Section */}
       <section
-        className="relative w-auto h-[90vh] bg-cover bg-center flex items-center justify-center text-white rounded-[27px]"
+        className="relative w-full h-[90vh] sm:h-[75vh] xs:h-[65vh] bg-cover bg-center flex items-center justify-center text-white rounded-[27px] overflow-hidden"
         style={{
           backgroundImage: `url(${HERO_BG.src})`,
         }}
       >
-        <div className="text-center bg-opacity-40 p-6 rounded-xl">
-          <h1 className="text-[94px] md:text-5xl font-bold mb-4">
-            Find your favorite <br /> place here!
+        <div className="text-center bg-opacity-40 px-4 py-6 rounded-xl max-w-3xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
+            Find your favorite <br className="hidden sm:block" /> place here!
           </h1>
-          <p className="text-[24px] md:text-xl">
+          <p className="text-base sm:text-lg md:text-xl">
             The best prices for over 2 million properties worldwide.
           </p>
         </div>
@@ -43,9 +43,12 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Listing Section */}
-      <section className="mx-auto px-4 py-10">
-        <h2 className="text-2xl font-semibold mb-6">Featured Listings</h2>
-        <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <section className="mx-auto px-4 py-10 max-w-7xl">
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-6 text-center sm:text-left">
+          Featured Listings
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {PROPERTYLISTINGSAMPLE.map((property) => (
             <Card key={property.name} property={property} />
           ))}
